@@ -1,0 +1,31 @@
+import React, { useEffect, useState } from "react";
+import { Alert } from "../components/Alert";
+import { FormNewTemplate } from "../components/FormNewTemplate";
+
+
+export const NewTemplate = () => {
+
+  const [alert, setAlert] = useState({});  
+  // const [informationType, setInformationType] = useState("");
+ 
+
+  return (
+    <>
+    {/* Incluir Pasos */}
+
+        <div className="flex px-1 md:px-4">
+       <div className="flex flex-col max-w-full px-2 py-6 xl:w-2/3 md:p-6">
+              {alert.msg && <Alert alert={alert} />}
+              <div className="flex flex-col flex-1 justify-center mb-8 mt-2">
+
+                <div className="w-full mt-2">
+                   <FormNewTemplate 
+                    setAlert={setAlert}
+                    />
+                </div>
+              </div>
+            </div>
+        </div>
+    </>
+  );
+};

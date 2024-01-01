@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import { Select } from "./Select";
+import useClient from "../hooks/useClient";
+import { Alert } from "./Alert";
+import useAuth from "../hooks/useAuth";
+
+
+export const FormNewClient = () => {
+  const [client, setClient] = useState("");
+
+  const { alert, clients, showAlert, submitClient } = useClient();
+  const { auth } = useAuth();
+
+
+
+
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if ([type].includes("")) {
+      showAlert({ msg: "Debe Seleccionar un template", error: true });
+      return;
+    }
+
+    if ([client].includes("")) {
+      showAlert({ msg: "Debe Seleccionar un Residente", error: true });
+      //   setInformationType({ msg: "INFORMACION/EJEMPLO", read: true });
+      return;
+    }
+
+    // datos a provider Clients
+    submitClient({ creador: auth._id, client, type });
+
+    showAlert({});
+  };
+  const { msg } = alert;
+  console.log("msg :", msg);
+  return (
+    <>
+      {msg && <Alert alert={alert} />}
+      <form
+        className="bg-white py-3 px-2 md:px-5 md:2:1/2 rounded-lg"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex flex-col max-w-xs mx-auto mt-5">
+          <Select
+            label={"residentes"}
+            values={transformedClients}
+            // value={[]}
+            selectedValue={client}
+            onChange={handleSelectResidentChange}
+          />
+        </div>
+        <div className="w-full mt-4 mx-auto max-w-xs">
+          <Select
+            label={"templates"}
+            values={templates}
+            selectedValue={type}
+            onChange={handleSelectTemplateChange}
+          />
+        </div>
+
+        <div className="flex flex-col max-w-xs mt-8 mx-auto mb-5">
+          <button
+            type="submit"
+            className="w-full bg-sky-700 border cursor-pointer  font-semibold hover:bg-sky-800 rounded-lg  py-4 text-sky-50 text-lg  px-4 tracking-wide transition-colors uppercase"
+          >
+            Continuar
+          </button>
+        </div>
+      </form> 
+    </>
+  );
+};
