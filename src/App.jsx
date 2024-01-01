@@ -38,8 +38,10 @@ export default function App() {
           <ClientProvider>
             <TemplateProvider>
             <Routes>
+              <Route path="/" element={<Templates />} />
+              <Route path="registro" element={<Register />} />
               {/* state auth = athenticated */}
-              <Route path="/" element={<AuthLayout />}>
+              {/* <Route path="/" element={<AuthLayout />}>
                 <Route index element={<Login />} />
                 <Route path="registro" element={<Register />} />
                 <Route path="nueva-password/:token" element={<NewPassword/>} />
@@ -48,7 +50,7 @@ export default function App() {
                   path="confirmar-cuenta/:id"
                   element={<ConfirmeAccount />}
                 />
-              </Route>
+              </Route> */}
 
               {/* state auth = unathenticated */}
               <Route path="templates" element={<SecureRoute />}>

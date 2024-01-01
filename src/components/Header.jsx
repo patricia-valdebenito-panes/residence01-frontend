@@ -21,9 +21,9 @@ export const Header = () => {
           >
             Residentes
           </Link>
-          <button className="text-white bg-sky-600 rounded-md font-bold p-2 md:p-3 focus:outline-none focus:bg-sky-700">
+          {/* <button className="text-white bg-sky-600 rounded-md font-bold p-2 md:p-3 focus:outline-none focus:bg-sky-700">
             Cerrar Sesión
-          </button>
+          </button> */}
         </div>
       </div>
     </header>
