@@ -9,7 +9,7 @@ import { TemplateProvider } from "./context/TemplateContext";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 
-import { NewPassword } from "./pages/newPassword";
+import { NewPassword } from "./pages/NewPassword";
 import { RequestPassword } from "./pages/RequestPassword";
 import { ConfirmeAccount } from "./pages/ConfirmeAccount";
 
@@ -28,7 +28,6 @@ import { Clients } from "./pages/Clients";
 import { Resident } from "./pages/Resident";
 import { ResidentEdit } from "./pages/ResidentEdit";
 
-
 // import { Algo } from "./pages/Algo";
 
 export default function App() {
@@ -43,7 +42,7 @@ export default function App() {
               <Route path="/" element={<AuthLayout />}>
                 <Route index element={<Login />} />
                 <Route path="registro" element={<Register />} />
-                <Route path="nueva-password/:token" element={<NewPassword />} />
+                <Route path="nueva-password/:token" element={<NewPassword/>} />
                 <Route path="nueva-password" element={<RequestPassword />} />
                 <Route
                   path="confirmar-cuenta/:id"
